@@ -1,32 +1,32 @@
 <?php
-    $paragrafos = $_POST['paragrafos'];
-    $conteudo = $_POST['conteudo'];
-    $lista = $_POST['lista'];
-    $itens = $_POST['itens'];
+$paragrafos = $_POST['paragrafos'];
+$conteudo = $_POST['conteudo'];
+$lista = $_POST['lista'];
+$itens = $_POST['itens'];
 
-    $contadro = 0+1;
+$contador = 1;
 
-    if ($paragrafos <= 20) {
-        while ($contadro <= $paragrafos) {
-            $contadro++;
+if ($paragrafos <= 20) {
+    echo "<ul>";
+    while ($contador <= $paragrafos) {
+        echo "<li>Parágrafo $contador: $conteudo</li>";
+        $contador++;
+    }
+    echo "</ul>";
+} else {
+    echo "Muitos parágrafos gerados <br>";
+}
 
-            echo"parágrafo$contadro: $conteudo <br>";
-            
-        }
-    }else {
-        echo "Muitos parágrafos gerados";
-    };
-    
-    $qi = 0+1;
+$qi = 1;
 
-    if ($itens <=50) {
-        while ($qi <= $itens ) {
-            $qi++;
-           echo "texto da lista$qi:$lista<br>";
-        }
-    }else {
-        echo "lista extensa";
-    };
-
-
+if ($itens <= 50) {
+    echo "<ul>";
+    while ($qi <= $itens) {
+        echo "<li>Item $qi: $lista</li>";
+        $qi++;
+    }
+    echo "</ul>";
+} else {
+    echo "Lista extensa";
+}
 ?>
